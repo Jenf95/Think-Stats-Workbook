@@ -1,0 +1,15 @@
+#histogram: calculate frequency and probability of each value in a dataset 
+#the following dictionary can compute frequency
+#given a sequence of values: t
+hist = {}
+for x in t:
+    hist[x] = hist.get(x,0) + 1
+#the result is a dictionary that maps from values to frequencies
+
+#from frequency to probabilities, we divide the dictionary through n, which is called normalization
+n = float(len(t))     #there are n values in T
+pmf = {}
+for x, freq in hist.items():
+   pmf[x] = freq/n
+#pmf: a normalized histogram (probability mass function)--a function that maps from values to probabiities 
+
